@@ -4,15 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-on boot
-    # Display
-    chown system system /dev/oplus_sync
-    chmod 0666 /dev/oplus_sync
-
-    # Osense
-    chown system system /proc/pressure/io
-    chmod 0664 /proc/pressure/io
-
 on post-fs-data
     # ADSP ramdump
     mkdir /data/vendor/mmdump 0777 system system
