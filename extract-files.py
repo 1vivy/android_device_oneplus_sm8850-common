@@ -165,10 +165,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('libQnnHtp.so')
         .add_line_if_missing('libQnnSystem.so')
         .add_line_if_missing('libQnnHtpV81Stub.so')
-        .add_line_if_missing('libQnnGpu.so')
-        # libapsfixup.so is a /odm lib that libAlgoProcess now DT_NEEDEDs; the camera namespace
-        # can't resolve /odm libs by name, so expose it as a public library too.
-        .add_line_if_missing('libapsfixup.so'),
+        .add_line_if_missing('libQnnGpu.so'),  # v2.0: libapsfixup public-lib entry dropped (shim retired)
 }  # fmt: skip
 
 module = ExtractUtilsModule(
