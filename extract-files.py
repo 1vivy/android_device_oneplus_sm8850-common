@@ -54,6 +54,78 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_vendor_suffix,
 }
 
+# Dolby Vision c2.qti.dv MediaCodec nodes — re-injected into media_codecs_canoe_v2.xml after
+# the device extract strips them (the OOS _vendor.xml that carries them is not in the load
+# chain). Makes DV HDR video recording survive every re-extract. Bodies are byte-exact from
+# odm/etc/media_codecs_dolby_vision.xml. See ITERATION-LOG #29 (DV-codec regression).
+DV_DECODERS = (
+    """\
+        <MediaCodec name="c2.qti.dv.decoder" type="video/dolby-vision" >
+            <Limit name="size" min="96x96" max="8192x8192" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="36-138240" />
+            <Limit name="blocks-per-second" min="36" max="7776000" />
+            <Limit name="bitrate" range="1-160000000" />
+            <Limit name="frame-rate" range="1-480" />
+            <Feature name="adaptive-playback" />
+            <Feature name="dynamic-color-aspects" />
+            <Feature name="can-swap-width-height" required="true" />
+            <!--WangZhikun@MULTIMEDIA.MEDIASERVER.PLAYER 8732247 Add Dolby Codec Feature-->
+            <Feature name="oplus-dolby-vision-color-mode" />
+            <Limit name="concurrent-instances" max="16" />
+            <!-- <Limit name="performance-point-1280x720" value="480" /> -->
+            <Limit name="performance-point-1920x1080" value="480" />
+            <Limit name="performance-point-3840x2160" value="240" />
+            <Limit name="performance-point-4096x2160" value="120" />
+            <Limit name="performance-point-7680x4320" value="60" />
+            <Limit name="performance-point-8192x4320" value="48" />
+        </MediaCodec>
+        <MediaCodec name="c2.qti.dv.decoder.secure" type="video/dolby-vision" >
+            <Limit name="size" min="96x96" max="4096x4096" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="36-34560" />
+            <Limit name="blocks-per-second" min="36" max="4147200" />
+            <Limit name="bitrate" range="1-40000000" />
+            <Limit name="frame-rate" range="1-120" />
+            <Feature name="adaptive-playback" />
+            <Feature name="dynamic-color-aspects" />
+            <Feature name="secure-playback" required="true" />
+            <Feature name="low-latency" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="concurrent-instances" max="3" />
+            <Limit name="performance-point-3840x2160" value="60" />
+            <Limit name="performance-point-4096x2304" value="30" />
+        </MediaCodec>
+"""
+)
+DV_ENCODER = (
+    """\
+        <MediaCodec name="c2.qti.dv.encoder" type="video/dolby-vision">
+            <Limit name="size" min="96x96" max="8192x8192" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="64" max="3916800" />
+            <Limit name="block-count" range="36-138240" />
+            <Limit name="bitrate" range="1-160000000" />
+            <Limit name="frame-rate" range="1-480" />
+            <Limit name="complexity" range="0-100"  default="100" />
+            <Limit name="concurrent-instances" max="16" />
+            <Feature name="bitrate-modes" value="VBR,CBR" />
+            <Feature name="intra-refresh" />
+            <Feature name="encoding-statistics" />
+            <Feature name="video-minimum-quality" />
+            <Feature name="can-swap-width-height" required="true" />
+            <Limit name="performance-point-1280x720" value="480" />
+            <Limit name="performance-point-1920x1080" value="480" />
+            <Limit name="performance-point-1920x1080" value="240" />
+            <Limit name="performance-point-3840x2160" value="120" />
+            <Limit name="performance-point-7680x4320" value="30" />
+        </MediaCodec>
+"""
+)
+
 blob_fixups: blob_fixups_user_type = {
     'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff': blob_fixup()
         .add_needed('libshims_aidl_fingerprint_v3.oplus.so'),
@@ -100,7 +172,9 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/media_codecs_canoe_sku3.xml',
         'vendor/etc/media_codecs_canoe_v2.xml',
     ): blob_fixup()
-        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
+        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', '')
+        .regex_replace(r'([ \t]*</Decoders>)', DV_DECODERS + r'\1')
+        .regex_replace(r'([ \t]*</Encoders>)', DV_ENCODER + r'\1'),
     (
         'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so',
         'vendor/lib64/hw/libaudiocorehal.default.so',
