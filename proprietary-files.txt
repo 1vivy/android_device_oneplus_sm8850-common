@@ -578,6 +578,7 @@ vendor/etc/media_codecs_canoe_v2.xml
 vendor/etc/media_codecs_canoe_v2_vendor.xml
 vendor/etc/media_codecs_canoe_v3.xml
 vendor/etc/media_codecs_canoe_v3_vendor.xml
+odm/etc/media_codecs_dolby_vision.xml:vendor/etc/media_codecs_dolby_vision.xml
 vendor/etc/media_codecs_performance_canoe_sku1.xml
 vendor/etc/media_codecs_performance_canoe_sku1_vendor.xml
 vendor/etc/media_codecs_performance_canoe_sku2.xml
@@ -1297,3 +1298,8 @@ vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+# Dolby Vision Service
+odm/bin/hw/dvs-aidl-service
+odm/etc/init/dvs-aidl-service.rc
+odm/etc/vintf/manifest/dvs-aidl-service.xml
+odm/lib64/vendor.dolby.dvs-V1-ndk.so

@@ -12,3 +12,8 @@ ro.vendor.oplus.radio.carrier_detect_mode=1
 
 # SVN
 ro.build.version.svn=49
+
+# Dolby Vision
+ro.vendor.oplus.dolby_vision_dpu=1
+ro.vendor.oplus.dolby_vision_dpu.dvs=1
+ro.vendor.oplus.dolby_vision.multi_cfg=1
