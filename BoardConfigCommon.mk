@@ -270,3 +270,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/sm8850-common/BoardConfigVendor.mk
+
+# Include the Oplus camera port board flags when the camera stack is present.
+-include vendor/oneplus/camera-sm8850-common/BoardConfig.mk
