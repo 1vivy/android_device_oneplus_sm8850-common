@@ -7,6 +7,9 @@
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# SM8850 device kernels use 4K pages; keep check_elf_file on the 4K alignment gate.
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 4096
+
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
