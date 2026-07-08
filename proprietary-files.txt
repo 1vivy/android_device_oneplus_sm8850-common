@@ -1298,3 +1298,8 @@ vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+
+# Camera (Oplus camera port): stock libutils/libui ABI for libsharebuffer_impl
+odm/lib64/libsharebuffer_impl.so
+vendor/lib64/libutils.so:vendor/lib64/libutils-stock.so;FIX_SONAME
+vendor/lib64/libui.so:vendor/lib64/libui-stock.so;FIX_SONAME

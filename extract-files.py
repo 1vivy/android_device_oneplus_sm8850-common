@@ -164,6 +164,11 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libsdmclient.so',
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'odm/lib64/libsharebuffer_impl.so': blob_fixup()
+        .replace_needed('libutils.so', 'libutils-stock.so')
+        .replace_needed('libui.so', 'libui-stock.so'),
+    'vendor/lib64/libui-stock.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'vendor/lib64/libpwirishalwrapper.so': blob_fixup()
         .replace_needed('android.hardware.graphics.composer3-V3-ndk.so', 'android.hardware.graphics.composer3-V4-ndk.so'),
     'vendor/lib64/libsdmcore.so': blob_fixup()
