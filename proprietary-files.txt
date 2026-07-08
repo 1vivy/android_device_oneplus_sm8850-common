@@ -1298,6 +1298,15 @@ vendor/lib64/libwfduibcsrcinterface_vendor.so
 vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+
+# Camera (Oplus camera port): ShareBuffer allocator, dlopen'd by libsharebuffer.so
+# and resolved via createShareBufferAllocator. It links the platform libui/libutils
+# from /vendor/lib64 - do NOT remap it onto private -stock copies. Doing so puts a
+# second instance of libui/libutils in the process, so the allocator singleton no
+# longer holds an AndroidShareBufferAllocator and ShareBuffer_CheckBufferPool
+# tail-branches through a vtable slot that does not exist.
+odm/lib64/libsharebuffer_impl.so
+
 # Dolby Vision Service
 odm/bin/hw/dvs-aidl-service
 odm/etc/init/dvs-aidl-service.rc
