@@ -1303,3 +1303,10 @@ vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 odm/lib64/libsharebuffer_impl.so
 vendor/lib64/libutils.so:vendor/lib64/libutils-stock.so;FIX_SONAME
 vendor/lib64/libui.so:vendor/lib64/libui-stock.so;FIX_SONAME
+
+# Dolby Vision Service
+odm/bin/hw/dvs-aidl-service
+odm/etc/init/dvs-aidl-service.rc
+odm/etc/vintf/manifest/dvs-aidl-service.xml
+odm/lib/vendor.dolby.dvs-V1-ndk.so
+odm/lib64/vendor.dolby.dvs-V1-ndk.so
