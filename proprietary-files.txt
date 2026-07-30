@@ -985,7 +985,6 @@ odm/bin/oplus_sensor_fb
 odm/bin/oplus_sensor_logger_daemon
 odm/etc/init/init.oplus.sensor.rc
 odm/lib64/liboplus_service.so
-odm/lib64/libsensorbridge.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/qsap_dcfd
