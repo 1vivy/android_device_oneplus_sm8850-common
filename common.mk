@@ -164,6 +164,12 @@ PRODUCT_PACKAGES += \
     folio-daemon
 endif
 
+# Folio
+ifneq ($(TARGET_IS_TABLET),true)
+PRODUCT_PACKAGES += \
+    folio-daemon
+endif
+
 # GPS
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_COPY_FILES += \
