@@ -32,6 +32,10 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
 
+def lib_fixup_odm_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}_{partition}' if partition == 'odm' else None
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
@@ -52,6 +56,12 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.qccsyshal_aidl-V1-ndk',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
     ): lib_fixup_vendor_suffix,
+    (
+        'vendor.oplus.hardware.cryptoeng-V1-ndk',
+        'vendor.oplus.hardware.cryptoeng@1.0',
+        'vendor.oplus.hardware.fido.fido2ca-V1-ndk',
+        'vendor.oplus.hardware.fido.fidoca-V1-ndk',
+    ): lib_fixup_odm_suffix,
 }
 
 blob_fixups: blob_fixups_user_type = {

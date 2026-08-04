@@ -193,8 +193,8 @@ odm/firmware/secure_ta/cryptoeng.b07
 odm/firmware/secure_ta/cryptoeng.b08
 odm/firmware/secure_ta/cryptoeng.mdt
 odm/lib64/lib_cryptoeng_api.so
-odm/lib64/vendor.oplus.hardware.cryptoeng-V1-ndk.so
-odm/lib64/vendor.oplus.hardware.cryptoeng@1.0.so
+odm/lib64/vendor.oplus.hardware.cryptoeng-V1-ndk.so;MODULE_SUFFIX=_odm
+odm/lib64/vendor.oplus.hardware.cryptoeng@1.0.so;MODULE_SUFFIX=_odm
 system_ext/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
 system_ext/framework/vendor.oplus.hardware.cryptoeng-V1-java.jar
 system_ext/framework/vendor.oplus.hardware.cryptoeng-V1.0-java.jar
@@ -231,8 +231,8 @@ odm/firmware/secure_ta/fidotap.b08
 odm/firmware/secure_ta/fidotap.mdt
 odm/lib64/libfido2_factory.so
 odm/lib64/libfido_factory.so
-odm/lib64/vendor.oplus.hardware.fido.fido2ca-V1-ndk.so
-odm/lib64/vendor.oplus.hardware.fido.fidoca-V1-ndk.so
+odm/lib64/vendor.oplus.hardware.fido.fido2ca-V1-ndk.so;MODULE_SUFFIX=_odm
+odm/lib64/vendor.oplus.hardware.fido.fidoca-V1-ndk.so;MODULE_SUFFIX=_odm
 system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
 system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
 system_ext/framework/vendor.oplus.hardware.fido.fido2ca-V1-java.jar
