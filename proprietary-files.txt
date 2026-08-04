@@ -680,6 +680,9 @@ vendor/lib64/libdtlm.so
 
 # OPLUS Sensor config
 system_ext/etc/sensor/oplus_sys_sensor_config.xml
+# Display brightness config
+system_ext/etc/display_brightness_config_common.xml
+system_ext/etc/display_brightness_config_default.xml
 
 # OPLUS Log Core
 odm/bin/oldc_vnd
