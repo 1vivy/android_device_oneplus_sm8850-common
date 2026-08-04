@@ -681,6 +681,14 @@ odm/lib64/libosenseaidlhalclient.so
 odm/lib64/libosensenativeproxy_client.so
 vendor/lib64/libosensenativeproxy_client.so;MODULE_SUFFIX=_vendor
 
+# OPLUS URCC / UAH
+odm/bin/hw/vendor.oplus.hardware.urcc-service
+odm/etc/init/vendor.oplus.hardware.urcc-service.rc
+odm/etc/uah/uahconfig.pb
+odm/etc/vintf/manifest/vendor.oplus.hardware.urcc-service.xml
+odm/lib64/libuahcore.so
+odm/lib64/liburcccore.so
+
 # Pasrmanager
 vendor/bin/hw/vendor.qti.memory.pasrmanager-service
 vendor/etc/init/vendor.qti.memory.pasrmanager-service.rc
