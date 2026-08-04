@@ -671,6 +671,10 @@ vendor/lib64/libcwb_client_vendor.so
 vendor/lib64/libcwb_qcom_aidl.so
 vendor/lib64/libdtlm.so
 
+# Display brightness config
+system_ext/etc/display_brightness_config_common.xml
+system_ext/etc/display_brightness_config_default.xml
+
 # OPLUS Log Core
 odm/bin/oldc_vnd
 odm/lib64/libolc_vnd.so
