@@ -201,6 +201,46 @@ system_ext/framework/vendor.oplus.hardware.cryptoeng-V1.0-java.jar
 system_ext/lib64/vendor.oplus.hardware.cryptoeng-V1-ndk.so
 system_ext/lib64/vendor.oplus.hardware.cryptoeng@1.0.so
 
+# FIDO
+odm/bin/hw/vendor.oplus.hardware.fido.fido2ca@1.0-service
+odm/bin/hw/vendor.oplus.hardware.fido.fidoca@1.0-service
+odm/etc/init/vendor.oplus.hardware.fido.fido2ca@1.0-service.rc
+odm/etc/init/vendor.oplus.hardware.fido.fidoca@1.0-service.rc
+odm/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
+odm/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
+odm/etc/vintf/manifest/manifest_oplus_fido.xml
+odm/etc/vintf/manifest/manifest_oplus_fido2.xml
+odm/firmware/secure_ta/fidoctap.b00
+odm/firmware/secure_ta/fidoctap.b01
+odm/firmware/secure_ta/fidoctap.b02
+odm/firmware/secure_ta/fidoctap.b03
+odm/firmware/secure_ta/fidoctap.b04
+odm/firmware/secure_ta/fidoctap.b05
+odm/firmware/secure_ta/fidoctap.b06
+odm/firmware/secure_ta/fidoctap.b07
+odm/firmware/secure_ta/fidoctap.b08
+odm/firmware/secure_ta/fidoctap.mdt
+odm/firmware/secure_ta/fidotap.b00
+odm/firmware/secure_ta/fidotap.b01
+odm/firmware/secure_ta/fidotap.b02
+odm/firmware/secure_ta/fidotap.b03
+odm/firmware/secure_ta/fidotap.b04
+odm/firmware/secure_ta/fidotap.b05
+odm/firmware/secure_ta/fidotap.b06
+odm/firmware/secure_ta/fidotap.b07
+odm/firmware/secure_ta/fidotap.b08
+odm/firmware/secure_ta/fidotap.mdt
+odm/lib64/libfido2_factory.so
+odm/lib64/libfido_factory.so
+odm/lib64/vendor.oplus.hardware.fido.fido2ca-V1-ndk.so
+odm/lib64/vendor.oplus.hardware.fido.fidoca-V1-ndk.so
+system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
+system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
+system_ext/framework/vendor.oplus.hardware.fido.fido2ca-V1-java.jar
+system_ext/framework/vendor.oplus.hardware.fido.fidoca-V1-java.jar
+system_ext/lib64/vendor.oplus.hardware.fido.fido2ca-V1-ndk.so
+system_ext/lib64/vendor.oplus.hardware.fido.fidoca-V1-ndk.so
+
 # GNSS
 odm/etc/init/lowi-server.rc
 odm/etc/apdr.conf
