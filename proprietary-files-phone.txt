@@ -177,6 +177,30 @@ odm/lib64/libifaa_factory.so
 odm/lib64/librpmbengclient.so
 odm/lib64/libsecurity_event_dcs_vnd.so
 
+# Cryptoeng
+odm/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
+odm/etc/init/vendor.oplus.hardware.cryptoeng@1.0-service_FDE.rc
+odm/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
+odm/etc/vintf/manifest/manifest_oplus_cryptoeng.xml
+odm/firmware/secure_ta/cryptoeng.b00
+odm/firmware/secure_ta/cryptoeng.b01
+odm/firmware/secure_ta/cryptoeng.b02
+odm/firmware/secure_ta/cryptoeng.b03
+odm/firmware/secure_ta/cryptoeng.b04
+odm/firmware/secure_ta/cryptoeng.b05
+odm/firmware/secure_ta/cryptoeng.b06
+odm/firmware/secure_ta/cryptoeng.b07
+odm/firmware/secure_ta/cryptoeng.b08
+odm/firmware/secure_ta/cryptoeng.mdt
+odm/lib64/lib_cryptoeng_api.so
+odm/lib64/vendor.oplus.hardware.cryptoeng-V1-ndk.so
+odm/lib64/vendor.oplus.hardware.cryptoeng@1.0.so
+system_ext/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
+system_ext/framework/vendor.oplus.hardware.cryptoeng-V1-java.jar
+system_ext/framework/vendor.oplus.hardware.cryptoeng-V1.0-java.jar
+system_ext/lib64/vendor.oplus.hardware.cryptoeng-V1-ndk.so
+system_ext/lib64/vendor.oplus.hardware.cryptoeng@1.0.so
+
 # GNSS
 odm/etc/init/lowi-server.rc
 odm/etc/apdr.conf
