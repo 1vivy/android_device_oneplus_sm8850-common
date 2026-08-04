@@ -733,10 +733,7 @@ vendor/etc/perf/avcsysnodesconfigs.xml
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/commonsysnodesconfigs.xml
 vendor/etc/perf/factorsconfig.xml
-vendor/etc/perf/factorsconfig.xml
 vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/perfconfigstore.xml
 vendor/etc/perf/pinnerconfigstore.xml
 vendor/etc/perf/qapeboostsconfig.xml
