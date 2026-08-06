@@ -157,10 +157,6 @@ vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qasr-V3-ndk.so
 
 # Audio configs
-# EffectsConfig searches /odm/etc before /vendor/etc, and the stock build ships no
-# /vendor/etc/audio_effects_config.xml at all - this ODM registry is the one audioserver
-# loads, and the only place the AOSP spatializer UUID is registered.
-odm/etc/audio_effects_config.xml
 vendor/etc/audio/sku_alor/plugin_manager.xml
 vendor/etc/audio/sku_alor/quasar_config.xml
 vendor/etc/audio/sku_canoe/plugin_manager.xml
@@ -171,13 +167,11 @@ vendor/etc/card-defs.xml
 vendor/etc/usecaseKvManager.xml
 
 # Audio FX modules
-# OPLUS AudioX: libOplusSpatializerAidl is the AIDL IFactory backing the AOSP spatializer
-# UUID de4d6aaf-4e9d-473d-8168-4ce92d50a637. Both factories link liboplus_audiox, which
-# links odm/lib64/libMNN.so (already declared by android_device_oneplus_infiniti).
-odm/lib64/liboplus_audiox.so
-odm/lib64/soundfx/libOplusAudioxAidl.so
-odm/lib64/soundfx/libOplusSpatializerAidl.so
-odm/lib64/soundfx/liboplusupmixeffect.so
+# The OPLUS AudioX spatializer engine is declared by android_device_oneplus_infiniti,
+# NOT here. Its ODM libraries link odm/lib64/libMNN.so and odm/lib64/libc++_shared.so,
+# which are per-device blobs, and the vendor/oneplus/sm8850-common soong namespace does
+# not import vendor/oneplus/infiniti - that import edge runs the other way, so a common
+# module can never resolve a device-declared one.
 vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
