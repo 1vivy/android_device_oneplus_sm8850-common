@@ -5,6 +5,8 @@ audio.offload.min.duration.secs=30
 audio.offload.video=true
 audio.timecheck.timeout_duration_ms=8000
 ro.af.client_heap_size_kbyte=7168
+ro.oplus.audio.effect.speaker_geq=true
+ro.oplus.audio.effect.type=audiox_merge
 
 # Bluetooth
 bluetooth.device_id.vendor_id=0x001D
