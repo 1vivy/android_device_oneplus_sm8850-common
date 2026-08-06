@@ -392,6 +392,9 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils_prd.xml \
     telephony-ext
 
+PRODUCT_PACKAGES_DEBUG += \
+    oplus_radio_probe
+
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
