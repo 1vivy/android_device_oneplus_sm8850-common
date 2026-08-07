@@ -195,17 +195,6 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := canoe
 
-# Display composer generation.
-# hardware/qcom-caf/common/BoardConfigQcom.mk means to select v3_4 for UM_6_12_FAMILY,
-# but its guard is inverted - `ifeq ($(filter $(UM_6_12_FAMILY),$(TARGET_BOARD_PLATFORM)),)`
-# fires only when the platform is NOT in that family. canoe IS UM_6_12_FAMILY, so the
-# branch is skipped and the `?= v3_3` default stands. That leaves the composer HAL asking
-# for composer3-V3 / display.config-V12 while commonsys-intf/display ships the V4 / V13
-# generation, and soong refuses the graph with "depends on multiple versions of the same
-# aidl_interface". Pin the generation here; `?=` upstream means this wins whichever order
-# the two files are read in.
-SOONG_CONFIG_qtidisplay_composer_version := v3_4
-
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
