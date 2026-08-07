@@ -219,6 +219,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 endif
 
+include hardware/qcom-caf/sm8850/display/hal/config/display-modules.mk
+PRODUCT_PACKAGES += $(DISPLAY_MODULES_HARDWARE)
+
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
