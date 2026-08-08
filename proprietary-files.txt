@@ -172,7 +172,6 @@ vendor/etc/usecaseKvManager.xml
 # which are per-device blobs, and the vendor/oneplus/sm8850-common soong namespace does
 # not import vendor/oneplus/infiniti - that import edge runs the other way, so a common
 # module can never resolve a device-declared one.
-vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
