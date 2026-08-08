@@ -1,1 +1,2 @@
 /(vendor|odm)/bin/hw/dvs-aidl-service u:object_r:dvs_aidl_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.display\.demura-service u:object_r:hal_display_demura_default_exec:s0

@@ -1,0 +1,7 @@
+type hal_display_demura_default, domain;
+hal_server_domain(hal_display_demura_default, vendor_hal_display_demura)
+type hal_display_demura_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_display_demura_default)
+
+hal_attribute_service(vendor_hal_display_demura, vendor_hal_display_demura_aidl_service)
+binder_call(vendor_hal_display_demura_server, servicemanager)

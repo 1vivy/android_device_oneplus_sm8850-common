@@ -128,6 +128,13 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/sm8850
+
+$(call inherit-product, hardware/qcom-caf/sm8850/display/config/display-product.mk)
+include hardware/qcom-caf/sm8850/display/config/display-modules.mk
+PRODUCT_PACKAGES += $(DISPLAY_MODULES_HARDWARE)
+
 # Doze
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \

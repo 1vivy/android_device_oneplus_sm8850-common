@@ -1,1 +1,2 @@
 vendor.dolby.dvs.IDvs/default u:object_r:dvs_aidl_service:s0
+vendor.qti.hardware.display.demura.IDemuraFileFinder/default u:object_r:vendor_hal_display_demura_aidl_service:s0
