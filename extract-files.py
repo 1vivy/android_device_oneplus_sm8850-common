@@ -166,8 +166,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'vendor/lib64/libpwirishalwrapper.so': blob_fixup()
         .replace_needed('android.hardware.graphics.composer3-V3-ndk.so', 'android.hardware.graphics.composer3-V4-ndk.so'),
-    'vendor/lib64/libsdmcore.so': blob_fixup()
-        .add_needed('libbase.so'),
     'vendor/usr/keylayout/gpio-keys.kl': blob_fixup()
         .add_line_if_missing('key 735   ASSIST'),
     # APS turbo fix: on the port, the camera app's classloader namespace cannot dlopen the /odm
@@ -185,6 +183,66 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('libQnnSystem.so')
         .add_line_if_missing('libQnnHtpV81Stub.so')
         .add_line_if_missing('libQnnGpu.so'),
+    # /my_product and /my_bigball are OxygenOS partitions absent here, so a blob hardcoding
+    # one opens a path that can never resolve - this is what starved the ADFR engine and
+    # pinned the LTPO floor at 120Hz. binary_regex_replace neither pads a shorter
+    # replacement nor rejects a longer one, so each is NUL-padded to the original length by
+    # hand. Longest pattern first: bare '/my_product/vendor/etc/' prefixes the others and
+    # would otherwise pad mid-string and truncate them at the NUL.
+    'vendor/lib64/libsdmcore.so': blob_fixup()
+        .add_needed('libbase.so')
+        .binary_regex_replace(
+            rb'/my_product/vendor/etc/display_apollo_list\.xml',
+            b'/vendor/etc/display_apollo_list.xml' + b'\0' * 11,
+        )
+        .binary_regex_replace(
+            rb'/my_product/vendor/etc/display_apollo_list_',
+            b'/vendor/etc/display_apollo_list_' + b'\0' * 11,
+        )
+        .binary_regex_replace(
+            rb'/my_product/vendor/etc/',
+            b'/vendor/etc/' + b'\0' * 11,
+        ),
+    'vendor/lib64/libdemura_oem_plugin.so': blob_fixup()
+        .binary_regex_replace(
+            rb'/my_product/vendor/etc/',
+            b'/vendor/etc/' + b'\0' * 11,
+        ),
+    # multimedia_display_trackpoint_config.xml is absent from the device entirely, so this
+    # corrects the path but cannot restore the feature - the file must still be extracted.
+    'vendor/lib64/libdtlm.so': blob_fixup()
+        .binary_regex_replace(
+            rb'/my_product/vendor/etc/multimedia_display_trackpoint_config\.xml',
+            b'/vendor/etc/multimedia_display_trackpoint_config.xml' + b'\0' * 11,
+        ),
+    'vendor/lib64/libgps.utils.so': blob_fixup()
+        .binary_regex_replace(
+            rb'/my_bigball/vendor/etc/gps\.conf',
+            b'/vendor/etc/gps.conf' + b'\0' * 11,
+        )
+        .binary_regex_replace(
+            rb'/my_bigball/vendor/etc/izat\.conf',
+            b'/vendor/etc/izat.conf' + b'\0' * 11,
+        ),
+    (
+        'vendor/bin/hw/audiohalservice.qti',
+        'vendor/lib64/hw/libaudiocorehal.default.so',
+        'vendor/lib64/hw/libaudiocorehal.qti.so',
+        'vendor/lib64/hw/libaudioeffecthal.qti.so',
+        'vendor/lib64/libaudioserviceexampleimpl.so',
+    ): blob_fixup()
+        .binary_regex_replace(
+            rb'/my_product/etc',
+            b'/vendor/etc' + b'\0' * 4,
+        ),
+    (
+        'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service',
+        'odm/lib64/libifaa_factory.so',
+    ): blob_fixup()
+        .binary_regex_replace(
+            rb'/my_product/vendor/firmware',
+            b'/vendor/firmware' + b'\0' * 11,
+        ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

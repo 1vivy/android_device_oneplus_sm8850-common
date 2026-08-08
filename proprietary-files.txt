@@ -167,6 +167,12 @@ vendor/etc/card-defs.xml
 vendor/etc/usecaseKvManager.xml
 
 # Audio FX modules
+# The OPLUS AudioX spatializer engine is declared by android_device_oneplus_infiniti,
+# NOT here. Its ODM libraries link odm/lib64/libMNN.so and odm/lib64/libc++_shared.so,
+# which are per-device blobs, and the vendor/oneplus/sm8850-common soong namespace does
+# not import vendor/oneplus/infiniti - that import edge runs the other way, so a common
+# module can never resolve a device-declared one.
+vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
@@ -499,6 +505,7 @@ system/lib64/libostatslog.so:system_ext/lib64/libostatslog.so
 system_ext/bin/horae
 system_ext/etc/horae/horae.conf
 system_ext/etc/init/horae.rc
+system_ext/etc/sys_charger_config.xml
 
 # Hotword Enrollment
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
@@ -652,6 +659,12 @@ odm/etc/init/vendor.oplus.hardware.charger-V11-service.rc
 odm/etc/vintf/manifest/manifest_oplus_charger_aidl.xml
 odm/etc/charge.cfg
 odm/lib64/libGaiaClient_vnd.so
+system_ext/etc/permissions/vendor-oplus-hardware-charger.xml
+system_ext/framework/vendor.oplus.hardware.charger-V1-java.jar
+system_ext/framework/vendor.oplus.hardware.charger-V11-java.jar
+system_ext/lib64/vendor.oplus.hardware.charger-V1-ndk.so
+system_ext/lib64/vendor.oplus.hardware.charger-V11-ndk.so
+system_ext/lib64/vendor.oplus.hardware.charger@1.0.so
 
 # OPLUS Display
 odm/bin/hw/vendor.oplus.hardware.displaypanelfeature-service
@@ -670,6 +683,9 @@ vendor/lib64/libPanelChaplin.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libcwb_client_vendor.so
 vendor/lib64/libcwb_qcom_aidl.so
 vendor/lib64/libdtlm.so
+
+# OPLUS Sensor config
+system_ext/etc/sensor/oplus_sys_sensor_config.xml
 
 # OPLUS Log Core
 odm/bin/oldc_vnd

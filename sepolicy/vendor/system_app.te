@@ -1,0 +1,2 @@
+# GameBar GPU/CPU stats for performance metrics
+allow system_app { proc_stat vendor_sysfs_kgsl vendor_sysfs_kgsl_gpuclk }:file r_file_perms;
