@@ -181,7 +181,6 @@ odm/lib64/libsecurity_event_dcs_vnd.so
 odm/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
 odm/etc/init/vendor.oplus.hardware.cryptoeng@1.0-service_FDE.rc
 odm/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
-odm/etc/vintf/manifest/manifest_oplus_cryptoeng.xml
 odm/firmware/secure_ta/cryptoeng.b00
 odm/firmware/secure_ta/cryptoeng.b01
 odm/firmware/secure_ta/cryptoeng.b02
@@ -209,7 +208,6 @@ odm/etc/init/vendor.oplus.hardware.fido.fidoca@1.0-service.rc
 odm/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
 odm/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
 odm/etc/vintf/manifest/manifest_oplus_fido.xml
-odm/etc/vintf/manifest/manifest_oplus_fido2.xml
 odm/firmware/secure_ta/fidoctap.b00
 odm/firmware/secure_ta/fidoctap.b01
 odm/firmware/secure_ta/fidoctap.b02
