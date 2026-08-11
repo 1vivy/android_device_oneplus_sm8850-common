@@ -169,6 +169,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libsdmcore.so': blob_fixup()
         .add_needed('libbase.so'),
     'vendor/usr/keylayout/gpio-keys.kl': blob_fixup()
+        .regex_replace(r'(?m)^key\s+735\s+\S+.*$', 'key 735   ASSIST')
         .add_line_if_missing('key 735   ASSIST'),
     # APS turbo fix: on the port, the camera app's classloader namespace cannot dlopen the /odm
     # ArcSoft/QNN helper libs (couple-HDR, turbo, QNN HTP), which gates the DSP/QNN path so turbo
