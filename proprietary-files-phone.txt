@@ -178,7 +178,6 @@ odm/lib64/librpmbengclient.so
 odm/lib64/libsecurity_event_dcs_vnd.so
 
 # Cryptoeng
-odm/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
 odm/firmware/secure_ta/cryptoeng.b00
 odm/firmware/secure_ta/cryptoeng.b01
 odm/firmware/secure_ta/cryptoeng.b02
@@ -189,7 +188,6 @@ odm/firmware/secure_ta/cryptoeng.b06
 odm/firmware/secure_ta/cryptoeng.b07
 odm/firmware/secure_ta/cryptoeng.b08
 odm/firmware/secure_ta/cryptoeng.mdt
-system_ext/etc/permissions/vendor-oplus-hardware-cryptoeng.xml
 
 # FIDO
 odm/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
