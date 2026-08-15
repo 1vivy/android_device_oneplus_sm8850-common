@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 #
 # SPDX-FileCopyrightText: 2026 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
@@ -71,7 +70,9 @@ class SecurityPropertyPolicyTest(unittest.TestCase):
     def test_common_policy_has_one_property_owner(self):
         for key in COMMON_POLICY:
             owners = [
-                name for name, properties in self.by_partition.items() if key in properties
+                name
+                for name, properties in self.by_partition.items()
+                if key in properties
             ]
             self.assertEqual(1, len(owners), f"{key} owners: {owners}")
 
@@ -86,9 +87,7 @@ class SecurityPropertyPolicyTest(unittest.TestCase):
             "remoteprovisioning.googleapis.com",
             product["remote_provisioning.hostname"],
         )
-        self.assertEqual(
-            "2000", product["remote_provisioning.connect_timeout_millis"]
-        )
+        self.assertEqual("2000", product["remote_provisioning.connect_timeout_millis"])
 
 
 if __name__ == "__main__":
