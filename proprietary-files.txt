@@ -667,12 +667,9 @@ system_ext/lib64/vendor.oplus.hardware.charger-V11-ndk.so
 system_ext/lib64/vendor.oplus.hardware.charger@1.0.so
 
 # OPLUS Display
-odm/bin/hw/vendor.oplus.hardware.displaypanelfeature-service
 odm/bin/cwb_utils_aidl
-odm/etc/init/vendor.oplus.hardware.displaypanelfeature-service.rc
 odm/etc/vintf/manifest/manifest_displaycolorfeature_aidl.xml
 odm/etc/vintf/manifest/manifest_oplus_cwb_aidl.xml
-odm/etc/vintf/manifest/manifest_oplus_displaypanelfeature_aidl.xml
 odm/etc/vintf/manifest/vintf_manifext_aidl_panelchaplin.xml
 odm/lib64/libPanelChaplin.so
 odm/lib64/libdisplayaidlapis.so
