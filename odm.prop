@@ -13,6 +13,9 @@ ro.vendor.oplus.radio.carrier_detect_mode=1
 # SVN
 ro.build.version.svn=49
 
+# Remote Key Provisioning
+remote_provisioning.strongbox.rkp_only=true
+
 # Dolby Vision
 ro.vendor.oplus.dolby_vision_dpu=1
 ro.vendor.oplus.dolby_vision_dpu.dvs=1
