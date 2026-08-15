@@ -177,41 +177,7 @@ odm/lib64/libifaa_factory.so
 odm/lib64/librpmbengclient.so
 odm/lib64/libsecurity_event_dcs_vnd.so
 
-# Cryptoeng
-odm/firmware/secure_ta/cryptoeng.b00
-odm/firmware/secure_ta/cryptoeng.b01
-odm/firmware/secure_ta/cryptoeng.b02
-odm/firmware/secure_ta/cryptoeng.b03
-odm/firmware/secure_ta/cryptoeng.b04
-odm/firmware/secure_ta/cryptoeng.b05
-odm/firmware/secure_ta/cryptoeng.b06
-odm/firmware/secure_ta/cryptoeng.b07
-odm/firmware/secure_ta/cryptoeng.b08
-odm/firmware/secure_ta/cryptoeng.mdt
-
 # FIDO
-odm/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
-odm/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
-odm/firmware/secure_ta/fidoctap.b00
-odm/firmware/secure_ta/fidoctap.b01
-odm/firmware/secure_ta/fidoctap.b02
-odm/firmware/secure_ta/fidoctap.b03
-odm/firmware/secure_ta/fidoctap.b04
-odm/firmware/secure_ta/fidoctap.b05
-odm/firmware/secure_ta/fidoctap.b06
-odm/firmware/secure_ta/fidoctap.b07
-odm/firmware/secure_ta/fidoctap.b08
-odm/firmware/secure_ta/fidoctap.mdt
-odm/firmware/secure_ta/fidotap.b00
-odm/firmware/secure_ta/fidotap.b01
-odm/firmware/secure_ta/fidotap.b02
-odm/firmware/secure_ta/fidotap.b03
-odm/firmware/secure_ta/fidotap.b04
-odm/firmware/secure_ta/fidotap.b05
-odm/firmware/secure_ta/fidotap.b06
-odm/firmware/secure_ta/fidotap.b07
-odm/firmware/secure_ta/fidotap.b08
-odm/firmware/secure_ta/fidotap.mdt
 system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido.xml
 system_ext/etc/permissions/vendor-oplus-hardware-biometrics-fido2.xml
 system_ext/framework/vendor.oplus.hardware.fido.fido2ca-V1-java.jar
