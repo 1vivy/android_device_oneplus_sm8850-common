@@ -70,6 +70,12 @@ def test_source_display_packages_are_selected() -> None:
     assert not missing, f"source display packages are not selected: {missing}"
 
 
+def test_canoe_selects_composer3_v4() -> None:
+    board_config = (ROOT / "BoardConfigCommon.mk").read_text(encoding="utf-8")
+
+    assert "SOONG_CONFIG_qtidisplay_composer_version := v3_4" in board_config
+
+
 def test_source_owned_display_payloads_are_not_extracted() -> None:
     rows = {
         line.split(";", maxsplit=1)[0]
