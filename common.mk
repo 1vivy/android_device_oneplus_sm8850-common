@@ -377,7 +377,8 @@ PRODUCT_SHIPPING_API_LEVEL += 36
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/oplus
+    hardware/oplus \
+    hardware/qcom-caf/sm8850/display
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
