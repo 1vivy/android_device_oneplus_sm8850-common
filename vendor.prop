@@ -276,6 +276,10 @@ persist.vendor.rcs.singlereg.feature=2
 # Secureprocessor
 vendor.secureprocessor.service_start=1
 
+# Security
+avf.remote_attestation.enabled=true
+vendor.keymint.retry_timer=5
+
 # Sensors
 persist.vendor.sensors.debug.hal=0
 vendor.dynamic_sensor.setup.timeout.ms=1600
@@ -299,7 +303,6 @@ ro.vendor.vm.ssr.enable=false
 # Widevine
 vendor.wv.oemcrypto.debug.enable_external_display_check=false
 vendor.wv.oemcrypto.debug.enable_hlos_data_path=true
-vendor.wv.oemcrypto.debug.enable_prov40=true
 
 # WiFi
 wifi.aware.interface=wifi-aware0
