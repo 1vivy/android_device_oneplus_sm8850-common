@@ -194,6 +194,9 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := canoe
+SOONG_CONFIG_NAMESPACES += qtidisplay_sm8850
+SOONG_CONFIG_qtidisplay_sm8850 := composer_version
+SOONG_CONFIG_qtidisplay_sm8850_composer_version := v3_4
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop

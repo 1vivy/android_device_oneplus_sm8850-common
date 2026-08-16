@@ -74,6 +74,12 @@ def test_device_does_not_override_shared_composer_version() -> None:
     board_config = (ROOT / "BoardConfigCommon.mk").read_text(encoding="utf-8")
 
     assert "SOONG_CONFIG_qtidisplay_composer_version" not in board_config
+    assert "SOONG_CONFIG_NAMESPACES += qtidisplay_sm8850" in board_config
+    assert "SOONG_CONFIG_qtidisplay_sm8850 := composer_version" in board_config
+    assert (
+        "SOONG_CONFIG_qtidisplay_sm8850_composer_version := v3_4"
+        in board_config
+    )
 
 
 def test_source_owned_display_payloads_are_not_extracted() -> None:
